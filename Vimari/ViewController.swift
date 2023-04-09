@@ -74,24 +74,34 @@ class ViewController: NSViewController {
     }
     
     func dispatchOpenSettings() {
-        SFSafariApplication.dispatchMessage(
-            withName: Constant.openSettings,
-            toExtensionWithIdentifier: Constant.extensionIdentifier,
-            userInfo: nil) { (error) in
-                if let error = error {
-                    print(error.localizedDescription)
+        if #available(macOS 10.12.4, *) {
+            SFSafariApplication.dispatchMessage(
+                withName: Constant.openSettings,
+                toExtensionWithIdentifier: Constant.extensionIdentifier,
+                userInfo: nil) { (error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
                 }
+        } else {
+            // Fallback on earlier versions
+            print("Unable to dispatch open settings")
         }
     }
     
     func dispatchResetSettings() {
-        SFSafariApplication.dispatchMessage(
-            withName: Constant.resetSettings,
-            toExtensionWithIdentifier: Constant.extensionIdentifier,
-            userInfo: nil) { (error) in
-                if let error = error {
-                    print(error.localizedDescription)
+        if #available(macOS 10.12.4, *) {
+            SFSafariApplication.dispatchMessage(
+                withName: Constant.resetSettings,
+                toExtensionWithIdentifier: Constant.extensionIdentifier,
+                userInfo: nil) { (error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
                 }
+        } else {
+            print("Unable to dispatch reset settings")
+            // Fallback on earlier versions
         }
     }
 }

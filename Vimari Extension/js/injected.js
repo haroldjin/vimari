@@ -72,12 +72,18 @@ var actionMap = {
 
 	'duplicateTab':
 		function() { window.open(window.location.href); },
-
+    
 	'scrollDownHalfPage':
 		function() { customScrollBy(0, window.innerHeight / 2); },
 
 	'scrollUpHalfPage':
 		function() { customScrollBy(0, window.innerHeight / -2); },
+    
+    'scrollDownOnePage':
+        function() { customScrollBy(0, window.innerHeight); },
+
+    'scrollUpOnePage':
+        function() { customScrollBy(0, -window.innerHeight); },
 
 	'goToPageBottom':
 		function() { customScrollBy(0, document.body.scrollHeight); },

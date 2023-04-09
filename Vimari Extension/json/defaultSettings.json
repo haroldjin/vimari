@@ -17,6 +17,8 @@
       "scrollRight": "l",
       "scrollUpHalfPage": "u",
       "scrollDownHalfPage": "d",
+      "scrollUpOnePage": "ctrl+b",
+      "scrollDownOnePage": "ctrl+f",
       "goToPageTop": "g g",
       "goToPageBottom": "shift+g",
       "goToFirstInput": "g i",
